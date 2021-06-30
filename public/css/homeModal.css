@@ -1,0 +1,180 @@
+
+.modal_btn {
+  background: darkolivegreen;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 25px;
+  font-family: "Noto Serif";
+  margin-left: 390px;
+  }
+  
+  .modal_btnFinalizar{
+    background: darkolivegreen;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 25px;
+    font-family: "Noto Serif";
+    margin-top: 20px;
+    margin-left: 650px;  
+  }
+  
+  
+  .modal {
+    display: none;
+    }
+    
+    .modal:target {
+    display: flex;
+    }
+    
+    /* --- CUSTOMIZÁVEL, MAS OBRIGATÓRIO --- */
+    
+    .modal {
+    text-align: left;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    }
+    
+    .modal:target {
+    justify-content: space-around;
+    align-items: center;
+    }
+    
+    .modal__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    cursor: default;
+    }
+    
+    .modal__content {
+    min-width: 780px;
+    height: 500px;
+    position: relative;
+    padding: 2rem;
+/*     border: 1px solid black;
+    background-color: #bae8e8;
+ */    }
+    
+    .modal__close {
+    color: initial;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 0.5rem;
+    display: inline-block;
+    }
+  
+    .opMenu{
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .pontuacao{
+      width: 100%;
+      height: 100%;
+      background-color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pontos{
+      font-size: 200px;
+      font-family: 'Amatic SC', cursive;
+      text-align: center;
+      margin-bottom: 100px;
+      color: black;
+    }
+
+    .configuracoes{
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/background2.svg');
+      background-attachment: fixed;
+    }
+
+
+.menupause{
+  width: 100%;
+  height: 100px;
+/*   border: 1px solid white;
+ */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: 180px;
+}
+
+.pontuacao{
+  font-size: 120px;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+}
+
+.buttonReiniciar{
+  width: 200px;
+  height: 60px;
+  background-color: #3c2a4d;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700px;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+  outline: 0;
+}
+
+.buttonReiniciar:hover{
+  filter: brightness(90%);
+}
+
+.buttonSair{
+  width: 200px;
+  height: 60px;
+  background-color: red;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700px;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+  outline: 0;
+}
+
+.buttonSair:hover{
+  filter: brightness(90%);
+}
