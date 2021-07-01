@@ -232,7 +232,7 @@
 .buttonReiniciar{
   width: 200px;
   height: 60px;
-  background-color: #3c2a4d;
+  background-color: #2c698d;
   border: 0;
   border-radius: 8px;
   color: white;
@@ -254,7 +254,7 @@
 .buttonSair{
   width: 200px;
   height: 60px;
-  background-color: red;
+  background-color: #2c698d;
   border: 0;
   border-radius: 8px;
   color: white;
