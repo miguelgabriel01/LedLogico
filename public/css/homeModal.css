@@ -101,7 +101,6 @@
 
     .pontos{
       font-size: 200px;
-      font-family: 'Amatic SC', cursive;
       text-align: center;
       margin-bottom: 100px;
       color: black;
@@ -131,7 +130,6 @@
 .pontuacao{
   font-size: 120px;
   text-align: center;
-  font-family: 'Amatic SC', cursive;
   color: white;
 
   display: flex;
@@ -141,8 +139,9 @@
 }
 
 .infoVida{
-  width: 410px;
+  width: 100%;
   height: 25px;
+  padding: 5px;
 
   display: flex;
   justify-content: flex-start;
