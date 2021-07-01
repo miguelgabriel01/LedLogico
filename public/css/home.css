@@ -14,6 +14,7 @@ body,html{
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  font-family: 'Righteous', cursive;
 }
 
 .leds{
@@ -27,7 +28,7 @@ body,html{
   flex-direction: row;
   flex-wrap: wrap;
 
-   margin-left: 300px;
+  margin-left: 300px;
 }
 
 #led{
@@ -63,12 +64,49 @@ body,html{
   border-radius: 50%;
 }
 
+.pontuacaoHome{
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* .poderes{
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.poder{
+  width: 20px;
+  height: 20px;
+ }
+ */
+
 .porcentagem{
   width: 170px;
   height: 3px;
 
   background-color: red;
+
+  animation-name: porcentagem;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
 }
 
-
+@keyframes porcentagem{
+  0%{background-color: red;}
+  25%{background-color: blue;}
+  50%{background-color: blueviolet;}
+  100%{background-color: orchid;}
+}
 

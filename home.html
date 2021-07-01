@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
   <link rel="stylesheet" href="./public/css/homeModal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet"></head>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Righteous&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav class="leds" style="display: non;">
     <div id="led" style="background-color:#0a2f35;"></div>
@@ -80,27 +82,60 @@
 
   <div class="jogador">
     <img src="./public/img/user.jpg" alt="jogador" class="player">
-    <span class="porcentagem"></span>
-    <a href="#modal" class="buttonReiniciar">Opções</a>
+
+    <div class="pontuacaoHome">
+      <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="icone de vida" class="iconeVida">
+      <div class="porcentagem"></div>
+    </div>
+
+    <!--   <div class="poderes">
+    <img src="./public/img/icones/api_black_24dp.svg" alt="" class="poder">
+    <img src="./public/img/icones/donut_large_black_24dp.svg" alt="" class="poder">
+    <img src="./public/img/icones/group_work_black_24dp.svg" alt="" class="poder">
+    <img src="./public/img/icones/pets_black_24dp (1).svg" alt="" class="poder">
+    <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="" class="poder">
+  </div>
+ --> <a href="#modal" class="buttonReiniciar"><img src="./public/img/icones/menu_white_36dp.svg" alt="opções" style="margin-top: 10px;"></a>
   </div>
 
   <div class="modal" id="modal" tabindex="-1">
     <a href="#" class="modal__overlay" aria-label="Fechar"></a>
     <div class="modal__content">
-    <div class="opMenu">
-       <div class="pontuacao"><small class="pontos">48</small></div>
-       <div class="configuracoes">
-        <nav class="menupause">
-          <a class="buttonSair" href="#" style="background-color: #12492f;">Continuar</a> 
-          <a class="buttonReiniciar" href="">Reiniciar</a>
-          <button class="buttonSair" type="submit" >Sair</button>  
-        </nav>
-       </div>
-    </div>
+      <div class="opMenu">
+        <div class="pontuacao">
+          <div class="infoVida">
+            <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="icone de vida" class="iconeVida">
+            <div class="vida"></div>
+          </div>
+          <!--         <small class="pontos">48</small>
+ -->
+          <h3 class="objetivo">OBJETIVO PRINCIPAL</h3>
+          <p id="descricaoObjetivo">
+            Apagar todas as luzes com o menor numero de movimentos possíveis e derrotar o <b>REI DE GELO.</b><br>
+            Mas não é tão fácil como parece, se você for derrotado, o mundo entrará em sua era de extinção. <br>
+            Sua vida esta limitada, por isso utilize o menor numero de movimentos para apagar todos os cubos de gelo.<br>
+            Boa sorte e que os <b>DEUSES TE PROTEJAM.</b>
+          </p>
+          <div id="barraInferiror"></div>
+          <div class="poderesOP">
+            <img src="./public/img/icones/api_black_24dp.svg" alt="" class="poderOP">
+            <img src="./public/img/icones/donut_large_black_24dp.svg" alt="" class="poderOP">
+            <img src="./public/img/icones/group_work_black_24dp.svg" alt="" class="poderOP">
+            <img src="./public/img/icones/pets_black_24dp (1).svg" alt="" class="poderOP">
+            <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="" class="poderOP">
+          </div>
+
+        </div>
+        <div class="configuracoes">
+          <nav class="menupause">
+            <a class="buttonSair" href="#" style="background-color: #12492f;">CONTINUE</a>
+            <a class="buttonReiniciar" href="">RESTART</a>
+            <button class="buttonSair" type="submit">GET OUT</button>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
-
-
-</div>
+  </div>
 </body>
 </html>

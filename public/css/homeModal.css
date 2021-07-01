@@ -133,7 +133,103 @@
   text-align: center;
   font-family: 'Amatic SC', cursive;
   color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
+
+.infoVida{
+  width: 410px;
+  height: 25px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+ 
+.iconeVida{
+ width: 20px;
+ height: 20px;
+}
+
+.vida{
+  width: 170px;
+  height: 4px;
+  background-color: #12492f;
+
+  animation-name: vida;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes vida{
+  0%{background-color: red;}
+  25%{background-color: blue;}
+  50%{background-color: blueviolet;}
+  100%{background-color: orchid;}
+}
+
+#barraInferiror{
+  width: 270px;
+  height: 2px;
+  background-color: #12492f;
+
+  animation-name: barraInferior;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes barraInferior{
+  0%{background-color: black;}
+  25%{background-color: gray;}
+  50%{background-color: darkgray;}
+  100%{background-color: darkolivegreen;}
+}
+
+.pontos{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px solid red;
+   
+/*   box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.75);
+ */}
+
+ .objetivo{
+   font-size: 20px;
+   color: gray;
+   text-align: initial;
+}
+
+#descricaoObjetivo{
+  font-size: 15px;
+  color: gray;
+  text-align: initial;
+  margin-left: 10px;
+}
+
+ .poderesOP{
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.poderOP{
+  width: 20px;
+  height: 20px;
+ }
+
+
 
 .buttonReiniciar{
   width: 200px;
