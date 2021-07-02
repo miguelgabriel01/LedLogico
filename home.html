@@ -13,10 +13,14 @@
 </head>
 
 <body>
-  <audio id="audio" autoplay> <source src="./public/music/musicaTema.mp3" type="audio/mp3"> Seu navegador não possui suporte ao elemento audio </audio>
+  <input type="checkbox" name="" id="light-css" style="display: none;">
+  <main>
+  <audio id="audio" autoplay>
+    <source src="./public/music/musicaTema.mp3" type="audio/mp3"> Seu navegador não possui suporte ao elemento audio </audio>
+  <!-- Input responsavel por ativar o modo claro  -->
   <nav class="leds" style="display: non;">
-    <div id="led" style="background-color:#0a2f35;"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
+    <div id="ledAtivo"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
@@ -25,7 +29,7 @@
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
@@ -43,23 +47,23 @@
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
-    <div id="led"></div>
-    <div id="led"></div>
-    <div id="led"></div>
+    <div id="ledAtivo"></div>
+    <div id="ledAtivo"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
-    <div id="led" style="background-color:#0a2f35;"></div>
+    <div id="led"></div>
+    <div id="led"></div>
+    <div id="led"></div>
+    <div id="ledAtivo"></div>
     <div id="led"></div>
     <div id="led"></div>
     <div id="led"></div>
@@ -82,21 +86,14 @@
   </nav>
 
   <div class="jogador">
-    <img src="./public/img/user.jpg" alt="jogador" class="player">
+    <label id="light-modo" for="light-css" style="cursor: pointer;"><img src="./public/img/avatares/user.jpg" alt="jogador" class="player"></label>
 
     <div class="pontuacaoHome">
       <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="icone de vida" class="iconeVida">
       <div class="porcentagem"></div>
     </div>
 
-    <!--   <div class="poderes">
-    <img src="./public/img/icones/api_black_24dp.svg" alt="" class="poder">
-    <img src="./public/img/icones/donut_large_black_24dp.svg" alt="" class="poder">
-    <img src="./public/img/icones/group_work_black_24dp.svg" alt="" class="poder">
-    <img src="./public/img/icones/pets_black_24dp (1).svg" alt="" class="poder">
-    <img src="./public/img/icones/view_in_ar_black_24dp (1).svg" alt="" class="poder">
-  </div>
- --> <a href="#modal" class="buttonReiniciar" style="background-color: #3c2a4d;"><img src="./public/img/icones/menu_white_36dp.svg" alt="opções" style="margin-top: 10px;"></a>
+    <a href="#modal" class="buttonOpcoes"><img src="./public/img/icones/menu_white_36dp.svg" alt="opções" style="margin-top: 10px;"></a>
   </div>
 
   <div class="modal" id="modal" tabindex="-1">
@@ -129,15 +126,16 @@
         </div>
         <div class="configuracoes">
           <nav class="menupause">
-            <a class="buttonSair" href="#" style="background-color: #2c698d;">CONTINUE</a>
+            <a class="buttonContinuar" href="#">CONTINUE</a>
             <a class="buttonReiniciar" href="">RESTART</a>
             <a href="#" class="buttonSair">GET OUT</a>
-          </nav>
+           </nav>
         </div>
       </div>
     </div>
   </div>
   </div>
+</main>
 </body>
 
 </html>
