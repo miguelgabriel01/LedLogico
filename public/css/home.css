@@ -61,13 +61,13 @@ main {
 
 #light-css:checked+main {
   /* Cores relacionadas aos leds*/
-  --background-led: whitesmoke;
-  --background-led-ativo: #0a2f35;
-  --background-led-hover: #bae8e8;
-  --border-led: #bae8e8;
+  --background-led: #1E2021;
+  --background-led-ativo: #08262A;
+  --background-led-hover: #1b5050;
+  --border-led: #206161;
 
   /* Cores relacionadas ao estilo geral do Body/Html*/
-  --background-body: white;
+  --background-body: #181A1B;
 
   /* Estilos aplicados ao modal*/
   --background-modal-btn: darkolivegreen;
