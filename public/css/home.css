@@ -1,39 +1,51 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   /* Cores relacionadas aos leds*/
-  --background-led:whitesmoke;
-  --background-led-ativo:#0a2f35;
-  --background-led-hover:#bae8e8;
-  --border-led:#bae8e8;
+  --background-led: whitesmoke;
+  --background-led-ativo: #0a2f35;
+  --background-led-hover: #bae8e8;
+  --border-led: #bae8e8;
 
   /* Cores relacionadas ao estilo geral do Body/Html*/
-  --background-body:white;
+  --background-body: white;
 
   /* Estilos aplicados ao modal*/
   --background-modal-btn: darkolivegreen;
   --color-modal-btn: #ffffff;
   --background-modal-finalizar: darkolivegreen;
   --color-modal-finalizar: #ffffff;
-  --background-modal:rgba(0, 0, 0, 0.5);
+  --background-modal: rgba(0, 0, 0, 0.5);
   --background-color-pontuacao: white;
-  --color-pontos:black;
+  --color-pontos: black;
   --background-image-configuracoes: url('../img/background2.svg');
-  --color-pontuacao:white;
-  --color-objetivo:gray;
-  --color-descricao-objetivo:gray;
-  --background-button-continuar:#2c698d;
-  --background-button-reiniciar:#2c698d;
-  --background-button-sair:#2c698d;
-  --background-button-opcoes:#3c2a4d;
+  --color-pontuacao: white;
+  --color-objetivo: gray;
+  --color-descricao-objetivo: gray;
+  --background-button-continuar: #2c698d;
+  --background-button-reiniciar: #2c698d;
+  --background-button-sair: #2c698d;
+  --background-button-opcoes: #3c2a4d;
+  --cor-led-barra-inferior-um: black;
+  --cor-led-barra-inferior-dois: darkgray;
+  --cor-led-barra-inferior-tres: darkolivegreen;
+  --cor-led-barra-inferior-quatro: orchid;
+  --icone-um: url("../img/icones/api_black_24dp.svg");
+  --icone-vida: url("../img/icones/view_in_ar_black_24dp (1).svg");
+  --icone-dois: url("../img/icones/donut_large_black_24dp.svg");
+  --icone-tres: url("../img/icones/group_work_black_24dp.svg");
+  --icone-quatro: url("../img/icones/pets_black_24dp (1).svg");
+  --icone-cinco: url("../img/icones/view_in_ar_black_24dp (1).svg");
 }
 
 /* EStilos gerais aplicado ao jogo*/
-body,html,main{
+body,
+html,
+main {
   width: 100%;
   height: 100%;
 
@@ -47,37 +59,52 @@ body,html,main{
   flex-direction: row;
 }
 
-#light-css:checked + main{
+#light-css:checked+main {
   /* Cores relacionadas aos leds*/
-  --background-led:whitesmoke;
-  --background-led-ativo:#0a2f35;
-  --background-led-hover:#bae8e8;
-  --border-led:#bae8e8;
+  --background-led: whitesmoke;
+  --background-led-ativo: #0a2f35;
+  --background-led-hover: #bae8e8;
+  --border-led: #bae8e8;
 
   /* Cores relacionadas ao estilo geral do Body/Html*/
-  --background-body:white;
+  --background-body: white;
 
   /* Estilos aplicados ao modal*/
   --background-modal-btn: darkolivegreen;
   --color-modal-btn: #ffffff;
   --background-modal-finalizar: darkolivegreen;
   --color-modal-finalizar: #ffffff;
-  --background-modal:rgba(0, 0, 0, 0.5);
-  --background-color-pontuacao: white;
-  --color-pontos:black;
-  --background-image-configuracoes: url('../img/ilustracao-768x384.webp');
-  --color-pontuacao:white;
-  --color-objetivo:gray;
-  --color-descricao-objetivo:gray;
-  --background-button-continuar:#2c698d;
-  --background-button-reiniciar:#2c698d;
-  --background-button-sair:#2c698d;
+  --background-modal: rgba(0, 0, 0, 0.5);
+  --background-color-pontuacao: #262626;
+  --color-pontos: black;
+  --background-image-configuracoes: url('../img/background2.svg');
+  --color-pontuacao: white;
+  --color-objetivo: #ffffcc;
+  --color-descricao-objetivo: #ffffcc;
+  --background-button-continuar: #2c698d;
+  --background-button-reiniciar: #2c698d;
+  --background-button-sair: #2c698d;
+  --cor-led-barra-inferior-um: #1ac0c6;
+  /*   --cor-led-barra-inferior-dois:#272643;
+  --cor-led-barra-inferior-tres:#c7417b;
+  --cor-led-barra-inferior-quatro:#553772;
+ */
+  --cor-led-barra-inferior-dois:#1ac0c6;
+  --cor-led-barra-inferior-tres:#1ac0c6;
+  --cor-led-barra-inferior-quatro:#1ac0c6;
+
+  --icone-um: url("../img/icones/api_white_24dp.svg");
+  --icone-vida: url("../img/icones/view_in_ar_white_24dp.svg");
+  --icone-dois: url("../img/icones/donut_large_white_24dp.svg");
+  --icone-tres: url("../img/icones/group_work_white_24dp.svg");
+  --icone-quatro: url("../img/icones/pets_white_24dp.svg");
+  --icone-cinco: url("../img/icones/view_in_ar_white_24dp.svg");
 
   transition: .5s ease-in-out;
 }
 
 /* Estilo aplicado a caixa de leds*/
-.leds{
+.leds {
   width: 650px;
   height: 650px;
   padding: 2px;
@@ -91,7 +118,7 @@ body,html,main{
 }
 
 /* Estilo aplicado aos leds*/
-#led{
+#led {
   width: 80px;
   height: 80px;
 
@@ -101,12 +128,12 @@ body,html,main{
 }
 
 /* Estilo aplicado aos leds quando o usuário passa o mouse neles*/
-#led:hover{
+#led:hover {
   background-color: var(--background-led-hover);
 }
 
 /* Estilo aplicado aos leds ativos*/
-#ledAtivo{
+#ledAtivo {
   width: 80px;
   height: 80px;
 
@@ -116,7 +143,7 @@ body,html,main{
 }
 
 /* Estilo aplicado a caixa com as informações do jogador*/
-.jogador{
+.jogador {
   width: 200px;
   height: 200px;
 
@@ -130,13 +157,13 @@ body,html,main{
 }
 
 /* Estilo aplicado a foto do jogador*/
-.player{
+.player {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
 
-.pontuacaoHome{
+.pontuacaoHome {
   width: 200px;
   height: 50px;
 
@@ -147,7 +174,7 @@ body,html,main{
 }
 
 /* Estilo aplicado a barra de porcentagem do jogo*/
-.porcentagem{
+.porcentagem {
   width: 170px;
   height: 3px;
 
@@ -160,11 +187,22 @@ body,html,main{
 }
 
 /* Estilo aplicado a animação da barra de porcentagem*/
-@keyframes porcentagem{
-  0%{background-color: red;}
-  25%{background-color: blue;}
-  50%{background-color: blueviolet;}
-  100%{background-color: orchid;}
+@keyframes porcentagem {
+  0% {
+    background-color: red;
+  }
+
+  25% {
+    background-color: blue;
+  }
+
+  50% {
+    background-color: blueviolet;
+  }
+
+  100% {
+    background-color: orchid;
+  }
 }
 
 /* ESTILOS DO MODAL*/
@@ -282,7 +320,7 @@ body,html,main{
   width: 100%;
   height: 100px;
   margin-top: 180px;
-  
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -314,11 +352,14 @@ body,html,main{
 .iconeVida {
   width: 20px;
   height: 20px;
+  background-image: var(--icone-vida);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .vida {
   width: 170px;
-  height: 4px;
+  height: 2px;
   background-color: #12492f;
 
   animation-name: vida;
@@ -344,9 +385,9 @@ body,html,main{
   }
 }
 
-#barraInferiror {
+#barrainferior {
   width: 270px;
-  height: 2px;
+  height: 1px;
   background-color: #12492f;
 
   animation-name: barraInferior;
@@ -356,19 +397,19 @@ body,html,main{
 
 @keyframes barraInferior {
   0% {
-    background-color: black;
+    background-color: var(--cor-led-barra-inferior-um);
   }
 
   25% {
-    background-color: gray;
+    background-color: var(--cor-led-barra-inferior-dois);
   }
 
   50% {
-    background-color: darkgray;
+    background-color: var(--cor-led-barra-inferior-tres);
   }
 
   100% {
-    background-color: darkolivegreen;
+    background-color: var(--cor-led-barra-inferior-quatro);
   }
 }
 
@@ -403,9 +444,53 @@ body,html,main{
   margin-top: 20px;
 }
 
-.poderOP {
+/* .poderOP {
   width: 20px;
   height: 20px;
+} */
+
+.poderOP1 {
+  width: 20px;
+  height: 20px;
+  background-image: var(--icone-um);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.poderOP2 {
+  width: 20px;
+  height: 20px;
+  background-image: var(--icone-dois);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.poderOP3 {
+  width: 20px;
+  height: 20px;
+  background-image: var(--icone-tres);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.poderOP4 {
+  width: 20px;
+  height: 20px;
+  background-image: var(--icone-quatro);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.poderOP5 {
+  width: 20px;
+  height: 20px;
+  background-image: var(--icone-cinco);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .buttonReiniciar {
