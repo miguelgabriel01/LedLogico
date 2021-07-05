@@ -42,9 +42,9 @@
   --icone-cinco: url("../img/icones/view_in_ar_black_24dp (1).svg");
 }
 
-
 /* EStilos gerais aplicado ao jogo*/
-
+body,
+html,
 main {
   width: 100%;
   height: 100%;
@@ -89,9 +89,9 @@ main {
   --cor-led-barra-inferior-tres:#c7417b;
   --cor-led-barra-inferior-quatro:#553772;
  */
-  --cor-led-barra-inferior-dois:#1ac0c6;
-  --cor-led-barra-inferior-tres:#1ac0c6;
-  --cor-led-barra-inferior-quatro:#1ac0c6;
+  --cor-led-barra-inferior-dois: #1ac0c6;
+  --cor-led-barra-inferior-tres: #1ac0c6;
+  --cor-led-barra-inferior-quatro: #1ac0c6;
 
   --icone-um: url("../img/icones/api_white_24dp.svg");
   --icone-vida: url("../img/icones/view_in_ar_white_24dp.svg");
