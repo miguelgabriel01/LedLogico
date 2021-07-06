@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+boby{
+    height: 100%;
+    background-color: #12172b;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+section{
+    position: absolute;
+    background-color: #12172b;
+}
+
+
+
+h1{
+    font-family: 'Righteous', cursive;
+
+}
+
+.title{
+    text-align: center;
+    text-transform: capitalize;
+    color: #ccc;
+    margin: 10px 0;
+    position: relative;
+}
+
+.title::after{
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background-image: linear-gradient(to left, transparent 5%, #726a95);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.team-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.member{
+    flex: 1 1 250px;
+    margin: 20px;
+    text-align: center;
+    padding: 20px 10px;
+    cursor: pointer;
+    max-width: 300px;
+    transition: all 0.3s;
+}
+
+.member a{
+    color: #ccc;
+}
+
+.member a:hover{
+    text-decoration: underline;
+    color: rgb(97, 90, 90);
+}
+
+.member:hover{
+    box-shadow: 0 10x 20px rgba(0,0,0,0.1);
+    transform: translateY(-20px);
+}
+
+.member img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #726a95;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.member h2{
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #ccc;
+    margin: 15px 0;
+    font-family: 'Righteous', cursive;
+}
+
+.member p{
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+    font-family: 'Righteous', cursive;
+}
+
+div.text{
+   width: 400px;
+  margin: auto;
+  text-align: justify;
+  margin-top: 30px;
+}
+
+div.text p{
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+    font-family: 'Righteous', cursive;
+}
+
+
+
