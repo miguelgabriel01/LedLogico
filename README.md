@@ -4,7 +4,7 @@
    <li>Miguel Gabriel - mgbs@discente.ifpe.edu.br</li>
    <li>Denilson de Oliveira - doc@discente.ifpe.edu.br</li>
    <li>Leandro José - ljds1@discente.ifpe.edu.br</li>
-   <li></li>
+   <li> Luan Anjos Umbelino - lruas@discente.ifpe.edu.br </li>
    <li></li>
    <li></li>
    <li></li>
