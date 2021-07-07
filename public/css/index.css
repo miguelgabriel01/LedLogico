@@ -14,13 +14,13 @@ html {
   width: 100%;
   height: 100%;
 
-/*      background-image: url('./banners/149-1497220_download-hd-fantasy-castle-pc-wallpaper-id-pc.jpg');
+/*       background-image: url('../img/banners/149-1497220_download-hd-fantasy-castle-pc-wallpaper-id-pc.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover; 
+ */
 
-
-   background: black;
+    background: black;
  
 
   display: flex;
