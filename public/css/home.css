@@ -22,7 +22,7 @@
   --background-modal: rgba(0, 0, 0, 0.5);
   --background-color-pontuacao: white;
   --color-pontos: black;
-  --background-image-configuracoes: url('../img/background2.svg');
+  --background-image-configuracoes: url('../img/banners/background2.svg');
   --color-pontuacao: white;
   --color-objetivo: gray;
   --color-descricao-objetivo: gray;
@@ -77,7 +77,7 @@ main {
   --background-modal: rgba(0, 0, 0, 0.5);
   --background-color-pontuacao: #262626;
   --color-pontos: black;
-  --background-image-configuracoes: url('../img/background2.svg');
+  --background-image-configuracoes: url('../img/banners/background2.svg');
   --color-pontuacao: white;
   --color-objetivo: #ffffcc;
   --color-descricao-objetivo: #ffffcc;
