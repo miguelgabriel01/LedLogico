@@ -7,5 +7,6 @@
    <li> Luan Anjos Umbelino - lruas@discente.ifpe.edu.br </li>
    <li> Alline Anne G. Ferreira - aagf@discente.ifpe.edu.br </li>
    <li> Haendel da Silva Lima - hsl1@discente.ifpe.edu.br </ li >
+   <li>Ivan Teotonio Acioli Junior - itaj@discente.ifpe.edu.br</li>
    <li></li>
 </ul>
