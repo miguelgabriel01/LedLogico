@@ -1,0 +1,455 @@
+    /* Estilo aplicado a caixa de leds*/
+
+    .leds {
+        width: 650px;
+        height: 650px;
+        padding: 2px;
+        margin-left: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Estilo aplicado aos leds*/
+
+    #led {
+        width: 80px;
+        height: 80px;
+        background-color: var(--background-led);
+        border: 1px solid var(--border-led);
+        border-radius: 4px;
+    }
+
+    /* Estilo aplicado aos leds quando o usuário passa o mouse neles*/
+
+    #led:hover {
+        background-color: var(--background-led-hover);
+    }
+
+    /* Estilo aplicado aos leds ativos*/
+
+    #ledAtivo {
+        width: 80px;
+        height: 80px;
+        background-color: var(--background-led-ativo);
+        border: 1px solid var(--border-led);
+        border-radius: 4px;
+    }
+
+    /* Estilo aplicado a caixa com as informações do jogador*/
+
+    .jogador {
+        width: 200px;
+        height: 200px;
+        margin-left: 110px;
+        margin-bottom: 440px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Estilo aplicado a foto do jogador*/
+
+    .player {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .pontuacaoHome {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    /* Estilo aplicado a barra de porcentagem do jogo*/
+
+    .porcentagem {
+        width: 170px;
+        height: 3px;
+        background-color: red;
+        animation-name: porcentagem;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    /* Estilo aplicado a animação da barra de porcentagem*/
+
+    @keyframes porcentagem {
+        0% {
+            background-color: red;
+        }
+        25% {
+            background-color: blue;
+        }
+        50% {
+            background-color: blueviolet;
+        }
+        100% {
+            background-color: orchid;
+        }
+    }
+
+    /* ESTILOS DO MODAL*/
+
+    .modal_btn {
+        background: var(--background-modal-btn);
+        cursor: pointer;
+        color: var(--color-modal-btn);
+        border: none;
+        font-size: 1rem;
+        padding: 10px 25px;
+        font-family: "Noto Serif";
+        margin-left: 390px;
+    }
+
+    .modal_btnFinalizar {
+        background: var(--background-modal-finalizar);
+        cursor: pointer;
+        color: var(--color-modal-finalizar);
+        border: none;
+        font-size: 1rem;
+        padding: 10px 25px;
+        font-family: "Noto Serif";
+        margin-top: 20px;
+        margin-left: 650px;
+    }
+
+    .modal {
+        display: none;
+    }
+
+    .modal:target {
+        display: flex;
+    }
+
+    .modal {
+        text-align: left;
+        backdrop-filter: blur(2px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-modal);
+        padding: 2rem;
+    }
+
+    .modal:target {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .modal__overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        cursor: default;
+    }
+
+    .modal__content {
+        min-width: 780px;
+        height: 500px;
+        position: relative;
+        padding: 2rem;
+    }
+
+    .modal__close {
+        color: initial;
+        text-decoration: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 0.5rem;
+        display: inline-block;
+    }
+
+    .opMenu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .pontuacao {
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-color-pontuacao);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pontos {
+        font-size: 200px;
+        text-align: center;
+        margin-bottom: 100px;
+        color: var(--color-pontos);
+    }
+
+    .configuracoes {
+        width: 100%;
+        height: 100%;
+        background-image: var(--background-image-configuracoes);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .menupause {
+        width: 100%;
+        height: 100px;
+        margin-top: 180px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .pontuacao {
+        font-size: 120px;
+        text-align: center;
+        color: var(--color-pontuacao);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .infoVida {
+        width: 100%;
+        height: 25px;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .iconeVida {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-vida);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .vida {
+        width: 170px;
+        height: 2px;
+        background-color: #12492f;
+        animation-name: vida;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes vida {
+        0% {
+            background-color: red;
+        }
+        25% {
+            background-color: blue;
+        }
+        50% {
+            background-color: blueviolet;
+        }
+        100% {
+            background-color: orchid;
+        }
+    }
+
+    #barrainferior {
+        width: 270px;
+        height: 1px;
+        background-color: #12492f;
+        animation-name: barraInferior;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes barraInferior {
+        0% {
+            background-color: var(--cor-led-barra-inferior-um);
+        }
+        25% {
+            background-color: var(--cor-led-barra-inferior-dois);
+        }
+        50% {
+            background-color: var(--cor-led-barra-inferior-tres);
+        }
+        100% {
+            background-color: var(--cor-led-barra-inferior-quatro);
+        }
+    }
+
+    .pontos {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 1px solid red;
+    }
+
+    .objetivo {
+        font-size: 20px;
+        color: var(--color-objetivo);
+        text-align: initial;
+    }
+
+    #descricaoObjetivo {
+        font-size: 15px;
+        color: var(--color-descricao-objetivo);
+        text-align: initial;
+        margin-left: 10px;
+    }
+
+    .poderesOP {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    /* .poderOP {
+  width: 20px;
+  height: 20px;
+} */
+
+    .poderOP1 {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-um);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .poderOP2 {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-dois);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .poderOP3 {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-tres);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .poderOP4 {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-quatro);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .poderOP5 {
+        width: 20px;
+        height: 20px;
+        background-image: var(--icone-cinco);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .buttonReiniciar {
+        width: 200px;
+        height: 60px;
+        background-color: var(--background-button-reiniciar);
+        border: 0;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        transition: filter 0.2s;
+        outline: 0;
+    }
+
+    .buttonReiniciar:hover {
+        filter: brightness(90%);
+    }
+
+    .buttonSair {
+        width: 200px;
+        height: 60px;
+        background-color: var(--background-button-sair);
+        border: 0;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        transition: filter 0.2s;
+        outline: 0;
+    }
+
+    .buttonSair:hover {
+        filter: brightness(90%);
+    }
+
+    .buttonContinuar {
+        width: 200px;
+        height: 60px;
+        background-color: var(--background-button-continuar);
+        border: 0;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        transition: filter 0.2s;
+        outline: 0;
+    }
+
+    .buttonContinuar:hover {
+        filter: brightness(90%);
+    }
+
+    .buttonOpcoes {
+        width: 200px;
+        height: 60px;
+        background-color: var(--background-button-opcoes);
+        border: 0;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        transition: filter 0.2s;
+        outline: 0;
+    }
+
+    .buttonContinuar:hover {
+        filter: brightness(90%);
+    }

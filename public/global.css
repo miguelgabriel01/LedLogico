@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* Cores relacionadas aos leds*/
+	--background-led: whitesmoke;
+	--background-led-ativo: #0a2f35;
+	--background-led-hover: #bae8e8;
+	--border-led: #bae8e8;
+	/* Cores relacionadas ao estilo geral do Body/Html*/
+	--background-body: white;
+	/* Estilos aplicados ao modal*/
+	--background-modal-btn: darkolivegreen;
+	--color-modal-btn: #ffffff;
+	--background-modal-finalizar: darkolivegreen;
+	--color-modal-finalizar: #ffffff;
+	--background-modal: rgba(0, 0, 0, 0.5);
+	--background-color-pontuacao: white;
+	--color-pontos: black;
+	--background-image-configuracoes: url('/imagens/banners/background2.svg');
+	--color-pontuacao: white;
+	--color-objetivo: gray;
+	--color-descricao-objetivo: gray;
+	--background-button-continuar: #2c698d;
+	--background-button-reiniciar: #2c698d;
+	--background-button-sair: #2c698d;
+	--background-button-opcoes: #3c2a4d;
+	--cor-led-barra-inferior-um: black;
+	--cor-led-barra-inferior-dois: darkgray;
+	--cor-led-barra-inferior-tres: darkolivegreen;
+	--cor-led-barra-inferior-quatro: orchid;
+	--icone-um: url('/imagens/icones/api_black_24dp.svg');
+	--icone-vida: url("/imagens/icones/view_in_ar_black_24dp (1).svg");
+	--icone-dois: url("/imagens/icones/donut_large_black_24dp.svg");
+	--icone-tres: url("/imagens/icones/group_work_black_24dp.svg");
+	--icone-quatro: url("/imagens/icones/pets_black_24dp (1).svg");
+	--icone-cinco: url("/imagens/icones/view_in_ar_black_24dp (1).svg");
+}
+
+#light-css:checked+main {
+	/* Cores relacionadas aos leds*/
+	--background-led: #1e2021;
+	--background-led-ativo: #08262a;
+	--background-led-hover: #1b5050;
+	--border-led: #206161;
+	/* Cores relacionadas ao estilo geral do Body/Html*/
+	--background-body: #181a1b;
+	/* Estilos aplicados ao modal*/
+	--background-modal-btn: darkolivegreen;
+	--color-modal-btn: #ffffff;
+	--background-modal-finalizar: darkolivegreen;
+	--color-modal-finalizar: #ffffff;
+	--background-modal: rgba(0, 0, 0, 0.5);
+	--background-color-pontuacao: #262626;
+	--color-pontos: black;
+	--background-image-configuracoes: url("/imagens/banners/background2.svg");
+	--color-pontuacao: white;
+	--color-objetivo: #ffffcc;
+	--color-descricao-objetivo: #ffffcc;
+	--background-button-continuar: #2c698d;
+	--background-button-reiniciar: #2c698d;
+	--background-button-sair: #2c698d;
+	--cor-led-barra-inferior-um: #1ac0c6;
+	/*   --cor-led-barra-inferior-dois:#272643;
+--cor-led-barra-inferior-tres:#c7417b;
+--cor-led-barra-inferior-quatro:#553772;
+*/
+	--cor-led-barra-inferior-dois: #1ac0c6;
+	--cor-led-barra-inferior-tres: #1ac0c6;
+	--cor-led-barra-inferior-quatro: #1ac0c6;
+	--icone-um: url("/imagens/icones/api_white_24dp.svg");
+	--icone-vida: url("/imagens/icones/view_in_ar_white_24dp.svg");
+	--icone-dois: url("/imagens/icones/donut_large_white_24dp.svg");
+	--icone-tres: url("/imagens/icones/group_work_white_24dp.svg");
+	--icone-quatro: url("/imagens/icones/pets_white_24dp.svg");
+	--icone-cinco: url("/imagens/icones/view_in_ar_white_24dp.svg");
+	transition: 0.5s ease-in-out;
+}
+
+html, body, main {
+	width: 100%;
+	height: 100%;
+	background-color: var(--background-body);
+	font-family: "Righteous", cursive;
+	transition: 0.5s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
