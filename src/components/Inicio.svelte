@@ -1,17 +1,34 @@
 <script>
     //variavel para armazenar os ids de cada cubo(temporariamente)
     let cubosId = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
-        57, 58, 59, 60, 61, 62, 63, 64,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,false,false,false,
+        false,false,false,false
     ];
-    console.log(cubosId);
+
+    //cores padrão dos cubos
+    let corCuboSelecionado = '#0a2f35';//cor do cubo selecionado
+    let corCubospadrao = 'whitesmoke';//valor inicial do cubo
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
     function handleClickCubo(id) {
         alert("O indice clicado foi: " + id);
         console.log(id);
+
+        /**
+        verofocamos se o valor recebido como
+         parametro é false, se for, alteramos para true e o mesmo acontece se o valor for true
+        */
+        if(cubosId[id] === false){
+            cubosId[id] = true
+        }else{
+            cubosId[id] = false
+        }
+        console.log(cubosId);
     }
 
     let modalAtivo = false;
@@ -42,8 +59,15 @@
         <!-- Input responsavel por ativar o modo claro  -->
         <nav class="leds" style="display: non;">
             {#each cubosId as cubo, i}
-                <div on:click={() => handleClickCubo(cubo)} id="led" />
-            {/each}
+            {#if cubo === false}
+                <div on:click={() => handleClickCubo(i)} id="led" style="background:{corCubospadrao};" />
+                    
+                    {/if}
+                    {#if cubo === true}
+                    <div on:click={() => handleClickCubo(i)} id="led" style="background:{corCuboSelecionado};" />
+                        {/if}
+                    {/each}
+
         </nav>
 
         <div class="jogador">
