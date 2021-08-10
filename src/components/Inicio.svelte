@@ -85,26 +85,34 @@
         let valores = null;
         if (cubosId[id] === false) {
             //valores dos lados dos cubos
-            const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56];//indices do lado esquerdo
-            const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63];//inices do lado direito
+            const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56]; //indices do lado esquerdo
+            const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63]; //inices do lado direito
 
             //verificamos se o valor recebido como parametro está no lado esquerdo usando o id recebido como parametro
             if (ladoEsquerdoIndex.indexOf(id) > -1) {
                 //alert("entrou no lado esquerdo: " + id);
                 cubosAtivos = [id, id + 1, id + 8, id - 8];
                 for (var i = 0; i < cubosAtivos.length; i++) {
-                   // alert(cubosAtivos[i]);
-                    cubosId[cubosAtivos[i]] = true;//fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    // alert(cubosAtivos[i]);
+                 
+                    //condição para verificar e não permitir que novos cubos sejam criados
+                    if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
+                        cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    }
                 }
                 //alert("cubosAtivos++: " + cubosAtivos);
-            } 
+            }
             //verificamos se o valor recebido como parametro está no lado direito usando o id recebido como parametro
             else if (ladoDireitoIndex.indexOf(id) > -1) {
                 //alert("entrou no lado direito: " + id);
                 cubosAtivos = [id, id - 1, id + 8, id - 8];
                 for (var i = 0; i < cubosAtivos.length; i++) {
                     //alert(cubosAtivos[i]);
-                    cubosId[cubosAtivos[i]] = true;//fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    
+                    //condição para verificar e não permitir que novos cubos sejam criados
+                    if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
+                        cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    }
                 }
             }
             //se não estiver nem no lado direito ou no lado esquerdo, ele estará no meio
@@ -115,29 +123,34 @@
                     //alert("valor do else " + cubosAtivos[i]);
                     //console.log("entrou no meio/ valores: " + cubosAtivos[i])
                     //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
-                    cubosId[cubosAtivos[i]] = true;//fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+
+                    //condição para verificar e não permitir que novos cubos sejam criados
+                    if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
+                        cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    }
                 }
                 //alert("valor do else " + cubosAtivos);
             }
 
-            console.log('busca de valores do array original 2' + cubosId.indexOf(1))
+            console.log(
+                "busca de valores do array original 2" + cubosId.indexOf(1)
+            );
 
-            console.log(    
+            console.log(
                 "valores do cubo aparti da nova implementação: " + cubosAtivos
             );
 
             cubosId[id] = true; //informamos que agora o valor do indice de cubos foi alterado para true
-        } 
+        }
         //entra aqui caso o cubo já esteja ativo(true)
         else {
             cubosId[id] = false; //informamos que agora o valor do indice de cubos foi alterado para false
-            cubosAtivos.push(id);//inserimos na variavel os id que estavam ativos
+            cubosAtivos.push(id); //inserimos na variavel os id que estavam ativos
             console.log("cubos ativos: " + cubosAtivos);
         }
         console.log("cubos ativos 2: " + cubosAtivos);
         console.log("cubosId: " + cubosId);
-    }   
-
+    }
 
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
@@ -151,8 +164,7 @@
         } else {
             modalDisplay = "none";
         }
-    }   
-
+    }
 </script>
 
 <input type="checkbox" name="" id="light-css" style="display: none;" />
@@ -172,14 +184,18 @@
                     on:click={() => handleClickCubo(i)}
                     id="led"
                     style="background:{corCubospadrao};"
-                />
+                >
+                    {i}
+                </div>
             {/if}
             {#if cubo === true}
                 <div
                     on:click={() => handleClickCubo(i)}
                     id="led"
                     style="background:{corCuboSelecionado};"
-                />
+                >
+                    {i}
+                </div>
             {/if}
         {/each}
     </nav>
