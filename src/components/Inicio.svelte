@@ -71,13 +71,14 @@
     //valores dos lados dos cubos
     const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56]; //indices do lado esquerdo
     const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63]; //inices do lado direito
+    let vitoriaNumeros = 0;
 
     //cores padrão dos cubos
     let corCuboSelecionado = "#0a2f35"; //cor do cubo selecionado
     let corCubospadrao = "whitesmoke"; //valor inicial do cubo
 
     //função que verifica os valores recebidos e ativa ou desativa os cubos
-    function handleAtivo(id) {
+    function handleAtivo(id,estado) {
         //verificamos se o valor recebido como parametro está no lado esquerdo usando o id recebido como parametro
         if (ladoEsquerdoIndex.indexOf(id) > -1) {
             //alert("entrou no lado esquerdo: " + id);
@@ -87,7 +88,7 @@
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
             //alert("cubosAtivos++: " + cubosAtivos);
@@ -101,12 +102,13 @@
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
         }
         //se não estiver nem no lado direito ou no lado esquerdo, ele estará no meio
         else {
+
             //alert("entrou no meio");
             cubosAtivos = [id, id - 1, id + 1, id - 8, id + 8];
             for (var i = 0; i < cubosAtivos.length; i++) {
@@ -114,33 +116,59 @@
                 //console.log("entrou no meio/ valores: " + cubosAtivos[i])
                 //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
 
+
+
+
+                 if(cubosId[cubosAtivos[i]] === true){
+
+                    console.log('entrou: ' + cubosId[cubosAtivos[i]]);
+                    console.log('entrou cubos ativos: ' + cubosAtivos[i]);
+                    cubosId[cubosAtivos[i]] = false
+                    console.log('valor de array com busca por indices ' + cubosId[cubosAtivos[i]]);
+                    //console.log('valor atual do array: ' + cubosId)
+                    console.log('valor de cubos ativos*** ' + cubosAtivos[i])
+
+                } 
+
+
+
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = true; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
+
+
             }
-            //alert("valor do else " + cubosAtivos);
         }
     }
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
     function handleClickCubo(id) {
+        console.log('valor de id dentro dá mãe de bruno ' + id)
         /**
         verificamos se o valor recebido como
          parametro é false, se for, alteramos para true e o mesmo acontece se o valor for true
         */
-        if (cubosId[id] === false) {
-            return handleAtivo(id);
+         if (cubosId[id] === false) {
+            return handleAtivo(id,true);
         }
 
         //entra aqui caso o cubo já esteja ativo(true)
         else {
-            return !handleAtivo(id); 
-        }
+            return handleAtivo(id,false); 
+        } 
+
+        //return handleAtivo(id,!cubosId[id]);
 
         console.log("cubos ativos 2: " + cubosAtivos);
         console.log("cubosId: " + cubosId);
     }
+
+
+    function handleVitoria(status){
+        alert('venceu!!!!!')
+    }
+    
 
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
