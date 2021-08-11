@@ -4,11 +4,15 @@
 
 	import Menu from "../src/components/Menu.svelte"; //importamos o componente menu
 	import Sobre from "../src/components/Sobre.svelte"//importamos o componente sobre
+	import Perdeu from "../src/components/Perdeu.svelte"//importamos o componente Perdeu
+	import Venceu from "../src/components/Venceu.svelte"//importamos o componente Venceu
 
 	const routes = {
 		"/": Menu,
 		"/jogar": Inicio,
-		"/sobre": Sobre
+		"/sobre": Sobre,
+		"/perdeu": Perdeu,
+		"/venceu": Venceu
 	};
 </script>
 

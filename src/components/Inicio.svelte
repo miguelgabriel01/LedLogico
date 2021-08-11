@@ -78,7 +78,7 @@
     let corCubospadrao = "whitesmoke"; //valor inicial do cubo
 
     //função que verifica os valores recebidos e ativa ou desativa os cubos
-    function handleAtivo(id,estado) {
+    function handleAtivo(id, estado) {
         //verificamos se o valor recebido como parametro está no lado esquerdo usando o id recebido como parametro
         if (ladoEsquerdoIndex.indexOf(id) > -1) {
             //alert("entrou no lado esquerdo: " + id);
@@ -115,14 +115,17 @@
                 //console.log("entrou no meio/ valores: " + cubosAtivos[i])
                 //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
 
-                 if(cubosId[cubosAtivos[i]] === true){
-                    console.log('entrou: ' + cubosId[cubosAtivos[i]]);
-                    console.log('entrou cubos ativos: ' + cubosAtivos[i]);
-                    cubosId[cubosAtivos[i]] = false
-                    console.log('valor de array com busca por indices ' + cubosId[cubosAtivos[i]]);
+                if (cubosId[cubosAtivos[i]] === true) {
+                    console.log("entrou: " + cubosId[cubosAtivos[i]]);
+                    console.log("entrou cubos ativos: " + cubosAtivos[i]);
+                    cubosId[cubosAtivos[i]] = false;
+                    console.log(
+                        "valor de array com busca por indices " +
+                            cubosId[cubosAtivos[i]]
+                    );
                     //console.log('valor atual do array: ' + cubosId)
-                    console.log('valor de cubos ativos*** ' + cubosAtivos[i])
-                } 
+                    console.log("valor de cubos ativos*** " + cubosAtivos[i]);
+                }
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
@@ -132,10 +135,10 @@
         }
 
         //verificamos o estado do jogo
-        for(let i = 0; i<cubosId.length; i++){
-            if(cubosId.includes(false)){
-                console.log('jogo que continua')
-            }else{
+        for (let i = 0; i < cubosId.length; i++) {
+            if (cubosId.includes(false)) {
+                console.log("jogo que continua");
+            } else {
                 return handleVitoria(true);
             }
         }
@@ -143,31 +146,34 @@
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
     function handleClickCubo(id) {
-        console.log('valor de id dentro dá mãe de bruno ' + id)
+        console.log("valor de id dentro dá mãe de bruno " + id);
         /**
         verificamos se o valor recebido como
          parametro é false, se for, alteramos para true e o mesmo acontece se o valor for true
         */
-         if (cubosId[id] === false) {
-            return handleAtivo(id,true);
+        if (cubosId[id] === false) {
+            return handleAtivo(id, true);
         }
         //entra aqui caso o cubo já esteja ativo(true)
         else {
-            return handleAtivo(id,false); 
-        } 
+            return handleAtivo(id, false);
+        }
     }
-    
+
     //Função que verifica/recebe o status do jogo e faz a proxima ação!!
-    function handleVitoria(status){
-        if(status === true){//verificamos se o valor recebido como parametro é verdadeiro
-            alert('venceu!!!!!');
+    function handleVitoria(status) {
+        if (status === true) {
+            //verificamos se o valor recebido como parametro é verdadeiro
             //voltamos os cubos ao estado original( false )
-            for(let i = 0; i<cubosId.length; i++){
+            for (let i = 0; i < cubosId.length; i++) {
                 cubosId[i] = false;
+                window.location.href = "#/venceu";
             }
         }
     }
-    
+
+
+
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
     let modalDisplay = "none";
@@ -197,8 +203,8 @@
         {#each cubosId as cubo, i}
             {#if cubo === false}
                 <div
-                    on:click={() => handleClickCubo(i)}
                     id="led"
+                    on:click={() => handleClickCubo(i)}
                     style="background:{corCubospadrao};"
                 >
                     {i}
