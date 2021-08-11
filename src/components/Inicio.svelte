@@ -142,6 +142,10 @@
                 return handleVitoria(true);
             }
         }
+
+        //redirecionamos em caso de derrota( só será iniciado apos o primeiro clique)
+        setTimeout(function(){ window.location.href = "#/perdeu"; }, 10000);//10 segundos
+
     }
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
