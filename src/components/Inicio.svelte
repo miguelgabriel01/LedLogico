@@ -160,7 +160,11 @@
     //Função que verifica/recebe o status do jogo e faz a proxima ação!!
     function handleVitoria(status){
         if(status === true){//verificamos se o valor recebido como parametro é verdadeiro
-            alert('venceu!!!!!')
+            alert('venceu!!!!!');
+            //voltamos os cubos ao estado original( false )
+            for(let i = 0; i<cubosId.length; i++){
+                cubosId[i] = false;
+            }
         }
     }
     
