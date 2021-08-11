@@ -108,7 +108,6 @@
         }
         //se não estiver nem no lado direito ou no lado esquerdo, ele estará no meio
         else {
-
             //alert("entrou no meio");
             cubosAtivos = [id, id - 1, id + 1, id - 8, id + 8];
             for (var i = 0; i < cubosAtivos.length; i++) {
@@ -116,28 +115,28 @@
                 //console.log("entrou no meio/ valores: " + cubosAtivos[i])
                 //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
 
-
-
-
                  if(cubosId[cubosAtivos[i]] === true){
-
                     console.log('entrou: ' + cubosId[cubosAtivos[i]]);
                     console.log('entrou cubos ativos: ' + cubosAtivos[i]);
                     cubosId[cubosAtivos[i]] = false
                     console.log('valor de array com busca por indices ' + cubosId[cubosAtivos[i]]);
                     //console.log('valor atual do array: ' + cubosId)
                     console.log('valor de cubos ativos*** ' + cubosAtivos[i])
-
                 } 
-
-
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
                     cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
+            }
+        }
 
-
+        //verificamos o estado do jogo
+        for(let i = 0; i<cubosId.length; i++){
+            if(cubosId.includes(false)){
+                console.log('jogo que continua')
+            }else{
+                return handleVitoria(true);
             }
         }
     }
@@ -152,24 +151,19 @@
          if (cubosId[id] === false) {
             return handleAtivo(id,true);
         }
-
         //entra aqui caso o cubo já esteja ativo(true)
         else {
             return handleAtivo(id,false); 
         } 
-
-        //return handleAtivo(id,!cubosId[id]);
-
-        console.log("cubos ativos 2: " + cubosAtivos);
-        console.log("cubosId: " + cubosId);
-    }
-
-
-    function handleVitoria(status){
-        alert('venceu!!!!!')
     }
     
-
+    //Função que verifica/recebe o status do jogo e faz a proxima ação!!
+    function handleVitoria(status){
+        if(status === true){//verificamos se o valor recebido como parametro é verdadeiro
+            alert('venceu!!!!!')
+        }
+    }
+    
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
     let modalDisplay = "none";
