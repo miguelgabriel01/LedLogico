@@ -38,6 +38,13 @@
 	--icone-tres: url("/imagens/icones/group_work_black_24dp.svg");
 	--icone-quatro: url("/imagens/icones/pets_black_24dp (1).svg");
 	--icone-cinco: url("/imagens/icones/view_in_ar_black_24dp (1).svg");
+
+	--icone-umStatus: url("/imagens/icones/api_white_24dp.svg");
+	--icone-vidaStatus: url("/imagens/icones/view_in_ar_white_24dp.svg");
+	--icone-doisStatus: url("/imagens/icones/donut_large_white_24dp.svg");
+	--icone-tresStatus: url("/imagens/icones/group_work_white_24dp.svg");
+	--icone-quatroStatus: url("/imagens/icones/pets_white_24dp.svg");
+	--icone-cincoStatus: url("/imagens/icones/view_in_ar_white_24dp.svg");
 }
 
 #light-css:checked+main {
@@ -77,6 +84,13 @@
 	--icone-tres: url("/imagens/icones/group_work_white_24dp.svg");
 	--icone-quatro: url("/imagens/icones/pets_white_24dp.svg");
 	--icone-cinco: url("/imagens/icones/view_in_ar_white_24dp.svg");
+
+	--icone-umStatus: url("/imagens/icones/api_white_24dp.svg");
+	--icone-vidaStatus: url("/imagens/icones/view_in_ar_white_24dp.svg");
+	--icone-doisStatus: url("/imagens/icones/donut_large_white_24dp.svg");
+	--icone-tresStatus: url("/imagens/icones/group_work_white_24dp.svg");
+	--icone-quatroStatus: url("/imagens/icones/pets_white_24dp.svg");
+	--icone-cincoStatus: url("/imagens/icones/view_in_ar_white_24dp.svg");
 	transition: 0.5s ease-in-out;
 }
 

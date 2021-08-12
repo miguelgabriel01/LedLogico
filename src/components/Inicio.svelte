@@ -1,4 +1,6 @@
 <script>
+    import { onMount } from "svelte";
+
     //variavel para armazenar os ids de cada cubo(temporariamente)
     let cubosId = [
         false,
@@ -143,9 +145,7 @@
             }
         }
 
-        //redirecionamos em caso de derrota( só será iniciado apos o primeiro clique)
-        setTimeout(function(){ window.location.href = "#/perdeu"; }, 10000);//10 segundos
-
+        console.log("valor atualizado " + cubosId);
     }
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
@@ -176,8 +176,6 @@
         }
     }
 
-
-
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
     let modalDisplay = "none";
@@ -191,6 +189,18 @@
             modalDisplay = "none";
         }
     }
+
+    function handleDerrota() {
+        //redirecionamos em caso de derrota( só será iniciado apos o primeiro clique)
+        setTimeout(function () {
+            window.location.href = "#/perdeu";
+        }, 100000); //x segundos
+    }
+
+    //ciclo de vida que é ativado assim que o componente é iniciado!!!!
+    onMount(async () => {
+        await handleDerrota();
+    });
 </script>
 
 <input type="checkbox" name="" id="light-css" style="display: none;" />
@@ -231,7 +241,9 @@
 
         <div class="pontuacaoHome">
             <div class="iconeVida" />
-            <div class="porcentagem" />
+            <div class="time">
+                <div class="porcentagem" />
+            </div>
         </div>
 
         <a hsref="#modal" class="buttonOpcoes" on:click={handleModal}

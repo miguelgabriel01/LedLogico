@@ -13,6 +13,7 @@
 .mensagem {
     font-size: 100px;
     font-family: "Cinzel Decorative", cursive;
+    color:whitesmoke;
 }
 
 .poderesOPPerdeu {
@@ -28,7 +29,7 @@
 .poderOP1Perdeu {
     width: 40px;
     height: 40px;
-    background-image: var(--icone-um);
+    background-image: var(--icone-umStatus);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -36,7 +37,7 @@
 .poderOP2Perdeu {
     width: 40px;
     height: 40px;
-    background-image: var(--icone-dois);
+    background-image: var(--icone-doisStatus);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -44,7 +45,7 @@
 .poderOP3Perdeu {
     width: 40px;
     height: 40px;
-    background-image: var(--icone-tres);
+    background-image: var(--icone-tresStatus);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -52,7 +53,7 @@
 .poderOP4Perdeu {
     width: 40px;
     height: 40px;
-    background-image: var(--icone-quatro);
+    background-image: var(--icone-quatroStatus);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -60,7 +61,7 @@
 .poderOP5Perdeu {
     width: 40px;
     height: 40px;
-    background-image: var(--icone-cinco);
+    background-image: var(--icone-cincoStatus);
     background-repeat: no-repeat;
     background-size: cover;
 }
