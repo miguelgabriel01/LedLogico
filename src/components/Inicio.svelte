@@ -203,7 +203,6 @@
                     id="led"
                     on:click={() => handleClickCubo(i)}
                     style="background:{corCubospadrao};">
-                    {i}
                 </div>
             {/if}
             {#if cubo === true}
@@ -211,7 +210,6 @@
                     on:click={() => handleClickCubo(i)}
                     id="led"
                     style="background:{corCuboSelecionado};">
-                    {i}
                 </div>
             {/if}
         {/each}
