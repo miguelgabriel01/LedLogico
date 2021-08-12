@@ -9,5 +9,5 @@
         <div class="poderOP4Perdeu" />
         <div class="poderOP5Perdeu" />
     </div>
-    <a class="buttonContinuarPerdeu" href="#/">REINICIAR</a>
+    <a class="buttonContinuarPerdeu" href="#/jogar">REINICIAR</a>
 </section>

@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from "svelte";
+    import { onMount } from "svelte"; //importamos o ciclo de vida que é ativado assim que o usuario entra no jogo( assim que o componente é montado)
 
     //variavel para armazenar os ids de cada cubo(temporariamente)
     let cubosId = [
@@ -74,10 +74,14 @@
     const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56]; //indices do lado esquerdo
     const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63]; //inices do lado direito
     let vitoriaNumeros = 0;
+    let cubosParaInversao = [];
 
     //cores padrão dos cubos
     let corCuboSelecionado = "#0a2f35"; //cor do cubo selecionado
     let corCubospadrao = "whitesmoke"; //valor inicial do cubo
+
+    //parte relacionada ao modal( não editar pq agora n é importante)
+    let modalAtivo = false;
 
     //função que verifica os valores recebidos e ativa ou desativa os cubos
     function handleAtivo(id, estado) {
@@ -120,32 +124,27 @@
                 if (cubosId[cubosAtivos[i]] === true) {
                     console.log("entrou: " + cubosId[cubosAtivos[i]]);
                     console.log("entrou cubos ativos: " + cubosAtivos[i]);
-                    cubosId[cubosAtivos[i]] = false;
-                    console.log(
-                        "valor de array com busca por indices " +
-                            cubosId[cubosAtivos[i]]
-                    );
-                    //console.log('valor atual do array: ' + cubosId)
-                    console.log("valor de cubos ativos*** " + cubosAtivos[i]);
+                    cubosParaInversao = cubosAtivos[i];
                 }
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
                     cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosParaInversao] = !estado;
                 }
             }
         }
 
         //verificamos o estado do jogo
         for (let i = 0; i < cubosId.length; i++) {
+            //procura dentro do array(cubosId) algum valor false( que significa que o jogo ainda deve continuar = um led apagado)
             if (cubosId.includes(false)) {
+                //nada acontece se o array ainda possuir valores falses
                 console.log("jogo que continua");
             } else {
-                return handleVitoria(true);
+                return handleVitoria(true); //caso ele não entre na condição que verifica um valor false, ele vem para o else que chama a função handleVitoria e passa como parametro o valor true
             }
         }
-
-        console.log("valor atualizado " + cubosId);
     }
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
@@ -170,23 +169,9 @@
             //verificamos se o valor recebido como parametro é verdadeiro
             //voltamos os cubos ao estado original( false )
             for (let i = 0; i < cubosId.length; i++) {
-                cubosId[i] = false;
-                window.location.href = "#/venceu";
+                cubosId[i] = false; //apos o usuario ter ganho o jogo, todos os cubos voltam para o valor original(false)
+                window.location.href = "#/venceu"; //o usuario é redirecionado para o componente que mostra que que ele venceu e dá a opção de retornar ao menu
             }
-        }
-    }
-
-    //parte relacionada ao modal( não editar pq agora n é importante)
-    let modalAtivo = false;
-    let modalDisplay = "none";
-
-    function handleModal() {
-        let modalAtivo = true;
-        alert("Apertou no modal");
-        if (modalAtivo === true) {
-            modalDisplay = "flex";
-        } else {
-            modalDisplay = "none";
         }
     }
 
@@ -201,6 +186,11 @@
     onMount(async () => {
         await handleDerrota();
     });
+
+    //função para gerenciar o modal
+    function handleModal() {
+        modalAtivo = !modalAtivo;
+    }
 </script>
 
 <input type="checkbox" name="" id="light-css" style="display: none;" />
@@ -209,8 +199,8 @@
         <source
             src="./public/music/musicaTema.mp3"
             type="audio/mp3"
-            loop="infinit"
-        /> Seu navegador não possui suporte ao elemento audio
+            loop="infinit" />
+        Seu navegador não possui suporte ao elemento audio
     </audio>
     <!-- Input responsavel por ativar o modo claro  -->
     <nav class="leds" style="display: non;">
@@ -219,8 +209,7 @@
                 <div
                     id="led"
                     on:click={() => handleClickCubo(i)}
-                    style="background:{corCubospadrao};"
-                >
+                    style="background:{corCubospadrao};">
                     {i}
                 </div>
             {/if}
@@ -228,8 +217,7 @@
                 <div
                     on:click={() => handleClickCubo(i)}
                     id="led"
-                    style="background:{corCuboSelecionado};"
-                >
+                    style="background:{corCuboSelecionado};">
                     {i}
                 </div>
             {/if}
@@ -246,63 +234,70 @@
             </div>
         </div>
 
-        <a hsref="#modal" class="buttonOpcoes" on:click={handleModal}
-            ><img
+        <a hsref="#modal" class="buttonOpcoes" on:click={handleModal}><img
                 src="imagens/icones/menu_white_36dp.svg"
                 alt="opções"
-                style="margin-top: 10px;"
-            /></a
-        >
+                style="margin-top: 10px;" /></a>
     </div>
-
-    <div
-        class="modal"
-        id="modal"
-        tabindex="-1"
-        style="border:1px solid red; display:{modalDisplay} "
-    >
-        <a href="#" class="modal__overlay" aria-label="Fechar" />
-        <div class="modal__content">
-            <div class="opMenu">
-                <div class="pontuacao">
-                    <div class="infoVida">
-                        <div class="iconeVida" />
-                        <div class="vida" />
-                    </div>
-                    <!--         <small class="pontos">48</small>
+    {#if modalAtivo == true}
+        <div
+            class="modal"
+            id="modal"
+            tabindex="-1"
+            style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+">
+            <div class="modal__content">
+                <div class="opMenu">
+                    <div class="pontuacao">
+                        <div class="infoVida">
+                            <div class="iconeVida" />
+                            <div class="vida" />
+                        </div>
+                        <!--         <small class="pontos">48</small>
 -->
-                    <h3 class="objetivo">OBJETIVO PRINCIPAL</h3>
-                    <p id="descricaoObjetivo">
-                        Destruir todos os cubos com o menor numero de movimentos
-                        possíveis e derrotar o <b>REI DE GELO.</b><br />
-                        Mas não é tão fácil como parece, se você for derrotado, o
-                        mundo entrará em sua era de extinção. <br />
-                        Sua vida esta limitada, por isso utilize o menor numero de
-                        movimentos para destruir todos os cubos.<br />
-                        Boa sorte e que os <b>DEUSES TE PROTEJAM.</b>
-                    </p>
-                    <div id="barrainferior" />
+                        <h3 class="objetivo">OBJETIVO PRINCIPAL</h3>
+                        <p id="descricaoObjetivo">
+                            Destruir todos os cubos com o menor numero de
+                            movimentos possíveis e derrotar o
+                            <b>REI DE GELO.</b><br />
+                            Mas não é tão fácil como parece, se você for
+                            derrotado, o mundo entrará em sua era de extinção.
+                            <br />
+                            Sua vida esta limitada, por isso utilize o menor
+                            numero de movimentos para destruir todos os cubos.<br />
+                            Boa sorte e que os
+                            <b>DEUSES TE PROTEJAM.</b>
+                        </p>
+                        <div id="barrainferior" />
 
-                    <div class="poderesOP">
-                        <div class="poderOP1" />
-                        <div class="poderOP2" />
-                        <div class="poderOP3" />
-                        <div class="poderOP4" />
-                        <div class="poderOP5" />
+                        <div class="poderesOP">
+                            <div class="poderOP1" />
+                            <div class="poderOP2" />
+                            <div class="poderOP3" />
+                            <div class="poderOP4" />
+                            <div class="poderOP5" />
+                        </div>
                     </div>
-                </div>
-                <div class="configuracoes">
-                    <nav class="menupause">
-                        <a class="buttonContinuar" href="#">CONTINUAR</a>
-                        <!--               <a class="buttonContinuar" href="home.html">REINICIAR</a>
+                    <div class="configuracoes">
+                        <nav class="menupause">
+                            <a
+                                class="buttonContinuar"
+                                on:click={handleModal}
+                                style="cursor:pointer">CONTINUAR</a>
+                            <!--               <a class="buttonContinuar" href="home.html">REINICIAR</a>
 -->
-                        <label for="light-css" style="cursor: pointer;">
-                            <p class="buttonReiniciar">MODO DARK</p>
-                        </label>
-                        <a class="buttonSair" href="#/">SAIR</a>
-                    </nav>
+                            <label for="light-css" style="cursor: pointer;">
+                                <p class="buttonReiniciar">MODO DARK</p>
+                            </label>
+                            <a class="buttonSair" href="#/">SAIR</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    {/if}
 </main>
