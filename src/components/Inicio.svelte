@@ -94,7 +94,7 @@
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
             //alert("cubosAtivos++: " + cubosAtivos);
@@ -108,7 +108,7 @@
 
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
         }
@@ -121,16 +121,9 @@
                 //console.log("entrou no meio/ valores: " + cubosAtivos[i])
                 //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
 
-                if (cubosId[cubosAtivos[i]] === true) {
-                    console.log("entrou: " + cubosId[cubosAtivos[i]]);
-                    console.log("entrou cubos ativos: " + cubosAtivos[i]);
-                    cubosParaInversao = cubosAtivos[i];
-                }
-
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
-                    cubosId[cubosParaInversao] = !estado;
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
         }
