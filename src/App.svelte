@@ -6,13 +6,15 @@
 	import Sobre from "../src/components/Sobre.svelte"//importamos o componente sobre
 	import Perdeu from "../src/components/Perdeu.svelte"//importamos o componente Perdeu
 	import Venceu from "../src/components/Venceu.svelte"//importamos o componente Venceu
+	import Personagem from "../src/components/Personagem.svelte"//importamos o componente Personagem
 
 	const routes = {
 		"/": Menu,
 		"/jogar": Inicio,
 		"/sobre": Sobre,
 		"/perdeu": Perdeu,
-		"/venceu": Venceu
+		"/venceu": Venceu,
+		"/heroi": Personagem
 	};
 </script>
 
