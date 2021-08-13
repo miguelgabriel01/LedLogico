@@ -74,9 +74,9 @@
     const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56]; //indices do lado esquerdo
     const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63]; //inices do lado direito
 
-    //cores padrão dos cubos
-    let corCuboSelecionado = "#0a2f35"; //cor do cubo selecionado
-    let corCubospadrao = "whitesmoke"; //valor inicial do cubo
+    //cores padrão dos cubos whitesmoke
+    let corCuboSelecionado = "whitesmoke"; //cor do cubo selecionado
+    let corCubospadrao = "#0a2f35"; //valor inicial do cubo
 
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
