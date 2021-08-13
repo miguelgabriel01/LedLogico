@@ -174,7 +174,7 @@
 <main>
     <audio id="audio" autoplay>
         <source
-            src="./public/music/musicaTema.mp3"
+            src="/music/musicaTema.mp3"
             type="audio/mp3"
             loop="infinit" />
         Seu navegador não possui suporte ao elemento audio
