@@ -1,5 +1,6 @@
 <script>
-    import { onMount } from "svelte"; //importamos o ciclo de vida que é ativado assim que o usuario entra no jogo( assim que o componente é montado)
+    import { onDestroy, onMount } from "svelte"; //importamos o ciclo de vida que é ativado assim que o usuario entra no jogo( assim que o componente é montado)
+    import { nomeHeroi } from "../store";
 
     //variavel para armazenar os ids de cada cubo(temporariamente)
     let cubosId = [
@@ -80,6 +81,7 @@
 
     //parte relacionada ao modal( não editar pq agora n é importante)
     let modalAtivo = false;
+    let setIntervalVar = null;
 
     //função que verifica os valores recebidos e ativa ou desativa os cubos
     function handleAtivo(id, estado) {
@@ -154,7 +156,7 @@
 
     function handleDerrota() {
         //redirecionamos em caso de derrota( só será iniciado apos o primeiro clique)
-        setTimeout(function () {
+        setIntervalVar = setTimeout(function () {
             window.location.href = "#/perdeu";
         }, 100000); //x segundos
     }
@@ -162,23 +164,109 @@
     //ciclo de vida que é ativado assim que o componente é iniciado!!!!
     onMount(async () => {
         await handleDerrota();
+        await handleEscolhaHeroi();
     });
 
+    //responsavel por destruir a função que inicia o contador da partida
+    onDestroy(() => {
+        clearTimeout(setIntervalVar);
+    });
     //função para gerenciar o modal
     function handleModal() {
         modalAtivo = !modalAtivo;
+    }
+
+    function handleEscolhaHeroi() {
+        if ($nomeHeroi == "Peter apostle") {
+            cubosId[2] = true;
+            cubosId[10] = true;
+            cubosId[9] = true;
+            cubosId[11] = true;
+            cubosId[18] = true;
+        }
+        if ($nomeHeroi == "Matthew apostle") {
+            cubosId[36] = true;
+            cubosId[37] = true;
+            cubosId[27] = true;
+            cubosId[35] = true;
+            cubosId[36] = true;
+        }
+        if ($nomeHeroi == "Mary") {
+            cubosId[40] = true;
+            cubosId[41] = true;
+            cubosId[42] = true;
+            cubosId[33] = true;
+            cubosId[49] = true;
+            cubosId[55] = true;
+            cubosId[63] = true;
+            cubosId[62] = true;
+        }
+        if ($nomeHeroi == "traitor judas") {
+            //judas é safado, não acredite nele só pq não vai te dar dificuldades
+        }
+        if ($nomeHeroi == "Thiago apostle") {
+            cubosId[44] = true;
+            cubosId[45] = true;
+            cubosId[43] = true;
+            cubosId[37] = true;
+            cubosId[43] = true;
+            cubosId[18] = true;
+            cubosId[26] = true;
+            cubosId[34] = true;
+            cubosId[25] = true;
+            cubosId[27] = true;
+        }
+        if ($nomeHeroi == "Paul the persecutor") {
+            cubosId[18] = true;
+            cubosId[26] = true;
+            cubosId[34] = true;
+            cubosId[25] = true;
+            cubosId[27] = true;
+            cubosId[49] = true;
+            cubosId[55] = true;
+            cubosId[63] = true;
+            cubosId[62] = true;
+        }
+        if ($nomeHeroi == "Andrew apostle") {
+            cubosId[2] = true;
+            cubosId[10] = true;
+            cubosId[9] = true;
+            cubosId[11] = true;
+            cubosId[18] = true;
+            cubosId[49] = true;
+            cubosId[55] = true;
+            cubosId[63] = true;
+            cubosId[21] = true;
+            cubosId[29] = true;
+            cubosId[37] = true;
+            cubosId[28] = true;
+            cubosId[30] = true;
+        }
+        if ($nomeHeroi == "john Baptist") {
+            cubosId[34] = true;
+            cubosId[42] = true;
+            cubosId[50] = true;
+            cubosId[41] = true;
+            cubosId[43] = true;
+            cubosId[27] = true;
+            cubosId[19] = true;
+            cubosId[11] = true;
+            cubosId[18] = true;
+            cubosId[20] = true;
+            cubosId[6] = true;
+            cubosId[7] = true;
+            cubosId[15] = true;
+        }
     }
 </script>
 
 <input type="checkbox" name="" id="light-css" style="display: none;" />
 <main>
     <audio id="audio" autoplay>
-        <source
-            src="/music/musicaTema.mp3"
-            type="audio/mp3"
-            loop="infinit" />
+        <source src="/music/musicaTema.mp3" type="audio/mp3" loop="infinit" />
         Seu navegador não possui suporte ao elemento audio
     </audio>
+
     <!-- Input responsavel por ativar o modo claro  -->
     <nav class="leds" style="display: non;">
         {#each cubosId as cubo, i}
@@ -186,13 +274,15 @@
                 <div
                     id="led"
                     on:click={() => handleClickCubo(i)}
-                    style="background:{corCubospadrao};" />
+                    style="background:{corCubospadrao};"
+                />
             {/if}
             {#if cubo === true}
                 <div
                     on:click={() => handleClickCubo(i)}
                     id="led"
-                    style="background:{corCuboSelecionado};" />
+                    style="background:{corCuboSelecionado};"
+                />
             {/if}
         {/each}
     </nav>
@@ -207,10 +297,13 @@
             </div>
         </div>
 
-        <a hsref="#modal" class="buttonOpcoes" on:click={handleModal}><img
+        <a hsref="#modal" class="buttonOpcoes" on:click={handleModal}
+            ><img
                 src="imagens/icones/menu_white_36dp.svg"
                 alt="opções"
-                style="margin-top: 10px;" /></a>
+                style="margin-top: 10px;"
+            /></a
+        >
     </div>
     {#if modalAtivo == true}
         <div
@@ -222,7 +315,8 @@
         justify-content: center;
         align-items: center;
         flex-direction:column;
-">
+"
+        >
             <div class="modal__content">
                 <div class="opMenu">
                     <div class="pontuacao">
@@ -237,11 +331,11 @@
                             Destruir todos os cubos com o menor numero de
                             movimentos possíveis e derrotar o
                             <b>REI DE GELO.</b><br />
-                            Mas não é tão fácil como parece, se você for
-                            derrotado, o mundo entrará em sua era de extinção.
+                            Mas não é tão fácil como parece, se você for derrotado,
+                            o mundo entrará em sua era de extinção.
                             <br />
-                            Sua vida esta limitada, por isso utilize o menor
-                            numero de movimentos para destruir todos os cubos.<br />
+                            Sua vida esta limitada, por isso utilize o menor numero
+                            de movimentos para destruir todos os cubos.<br />
                             Boa sorte e que os
                             <b>DEUSES TE PROTEJAM.</b>
                         </p>
@@ -260,7 +354,8 @@
                             <a
                                 class="buttonContinuar"
                                 on:click={handleModal}
-                                style="cursor:pointer">CONTINUAR</a>
+                                style="cursor:pointer">CONTINUAR</a
+                            >
                             <!--               <a class="buttonContinuar" href="home.html">REINICIAR</a>
 -->
                             <label for="light-css" style="cursor: pointer;">

@@ -223,6 +223,7 @@
         background-image: var(--background-image-configuracoes);
         background-attachment: fixed;
         background-size: cover;
+        background-position: center;
     }
 
     .menupause {
