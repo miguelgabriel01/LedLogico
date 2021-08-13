@@ -73,8 +73,6 @@
     //valores dos lados dos cubos
     const ladoEsquerdoIndex = [0, 8, 16, 24, 32, 40, 48, 56]; //indices do lado esquerdo
     const ladoDireitoIndex = [7, 15, 23, 31, 39, 47, 55, 63]; //inices do lado direito
-    let vitoriaNumeros = 0;
-    let cubosParaInversao = [];
 
     //cores padrão dos cubos
     let corCuboSelecionado = "#0a2f35"; //cor do cubo selecionado
@@ -87,43 +85,31 @@
     function handleAtivo(id, estado) {
         //verificamos se o valor recebido como parametro está no lado esquerdo usando o id recebido como parametro
         if (ladoEsquerdoIndex.indexOf(id) > -1) {
-            //alert("entrou no lado esquerdo: " + id);
             cubosAtivos = [id, id + 1, id + 8, id - 8];
             for (var i = 0; i < cubosAtivos.length; i++) {
-                // alert(cubosAtivos[i]);
-
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]; //estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
-            //alert("cubosAtivos++: " + cubosAtivos);
         }
         //verificamos se o valor recebido como parametro está no lado direito usando o id recebido como parametro
         else if (ladoDireitoIndex.indexOf(id) > -1) {
-            //alert("entrou no lado direito: " + id);
             cubosAtivos = [id, id - 1, id + 8, id - 8];
             for (var i = 0; i < cubosAtivos.length; i++) {
-                //alert(cubosAtivos[i]);
-
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]; //estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
         }
         //se não estiver nem no lado direito ou no lado esquerdo, ele estará no meio
         else {
-            //alert("entrou no meio");
             cubosAtivos = [id, id - 1, id + 1, id - 8, id + 8];
             for (var i = 0; i < cubosAtivos.length; i++) {
-                //alert("valor do else " + cubosAtivos[i]);
-                //console.log("entrou no meio/ valores: " + cubosAtivos[i])
-                //console.log('busca de valores do array original ' + cubosId.indexOf(cubosAtivos[i]))
-
                 //condição para verificar e não permitir que novos cubos sejam criados
                 if (cubosAtivos[i] >= 0 && cubosAtivos[i] <= 63) {
-                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]//estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
+                    cubosId[cubosAtivos[i]] = !cubosId[cubosAtivos[i]]; //estado; //fazemos a atribuição dos valores de acordo com os indeces que foram gerados
                 }
             }
         }
@@ -133,7 +119,6 @@
             //procura dentro do array(cubosId) algum valor false( que significa que o jogo ainda deve continuar = um led apagado)
             if (cubosId.includes(false)) {
                 //nada acontece se o array ainda possuir valores falses
-                console.log("jogo que continua");
             } else {
                 return handleVitoria(true); //caso ele não entre na condição que verifica um valor false, ele vem para o else que chama a função handleVitoria e passa como parametro o valor true
             }
@@ -142,7 +127,6 @@
 
     //função que recebe o evento que diz qual cubo foi clicado pelo usuario
     function handleClickCubo(id) {
-        console.log("valor de id dentro dá mãe de bruno " + id);
         /**
         verificamos se o valor recebido como
          parametro é false, se for, alteramos para true e o mesmo acontece se o valor for true
@@ -202,15 +186,13 @@
                 <div
                     id="led"
                     on:click={() => handleClickCubo(i)}
-                    style="background:{corCubospadrao};">
-                </div>
+                    style="background:{corCubospadrao};" />
             {/if}
             {#if cubo === true}
                 <div
                     on:click={() => handleClickCubo(i)}
                     id="led"
-                    style="background:{corCuboSelecionado};">
-                </div>
+                    style="background:{corCuboSelecionado};" />
             {/if}
         {/each}
     </nav>
