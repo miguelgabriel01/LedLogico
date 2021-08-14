@@ -1,16 +1,22 @@
 <script>
-    import { onMount } from "svelte";
+    import { onMount,onDestroy } from "svelte";
+    let clearSetTimeout = '';
 
+    
     onMount(async () => {
         await handleRedirecionamento();
     });
 
     function handleRedirecionamento() {
         // your script goes here
-        setTimeout(function () {
+       clearSetTimeout = setTimeout(function () {
             window.location.href = "#/";
         }, 8000); //x segundos
     }
+
+    onDestroy(() => {
+        clearTimeout(clearSetTimeout);
+    });
 </script>
 
 <section class="venceu">

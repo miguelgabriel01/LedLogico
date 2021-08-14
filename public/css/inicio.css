@@ -20,6 +20,7 @@
         background-color: var(--background-led);
         border: 1px solid var(--border-led);
         border-radius: 4px;
+        cursor: pointer;
     }
 
     /* Estilo aplicado aos leds quando o usuário passa o mouse neles*/

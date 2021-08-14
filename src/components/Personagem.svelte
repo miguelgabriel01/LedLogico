@@ -16,43 +16,43 @@ import { nomeHeroi } from "../store";
             nome: "Matthew apostle",
             foto: "/imagens/avatares/heroi2.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Destemido, sobrevivente do atentado a seu reino comandado pelo genral Arios onde feriu um dos seus olhos",
         },
         {
             nome: "Mary",
             foto: "/imagens/avatares/heroi3.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Herdera de um reino conquistado por Mathias, luta pela independencia do seu povo com verdade e justiça",
         },
         {
             nome: "traitor judas",
             foto: "/imagens/avatares/heroi4.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Arrependido, lutou nos exercitos do Oeste que eram comandado pelo aliado de Mathias, o lord Elion",
         },
         {
             nome: "Thiago apostle",
             foto: "/imagens/avatares/heroi5.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Santo, o homem mais proximo dos deuses e responsavel por guadar o livro dos salvos para ressucitar os homens",
         },
         {
             nome: "Paul the persecutor",
             foto: "/imagens/avatares/heroi6.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Cruel e Honrado, responsavel por matar o herdeiro do trono do inferno e roubar o livro dos mortos",
         },
         {
             nome: "Andrew apostle",
             foto: "/imagens/avatares/heroi7.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Lider, junto com Peter, foi responsavel por destruir as mulharas de gelo do reino perdido e levar paz ao povo",
         },
         {
             nome: "john Baptist",
             foto: "/imagens/avatares/heroi8.jpg",
             descricao:
-                "Desbravador, participou da conquista dos 7 reinos junto com seu irmão que foi morto pelo rei de gelo. seu unico desejo é a vingança",
+                "Sabio, agraçiado com o poder sabedoria dos homens e a força dos arcanjos que não se curvaram na grande batalha.",
         },
     ];
 
