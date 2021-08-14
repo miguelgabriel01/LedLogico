@@ -361,7 +361,7 @@
                             <label for="light-css" style="cursor: pointer;">
                                 <p class="buttonReiniciar">MODO DARK</p>
                             </label>
-                            <a class="buttonSair" href="#/">SAIR</a>
+                            <a class="buttonSair" href="#/desistir">SAIR</a>
                         </nav>
                     </div>
                 </div>

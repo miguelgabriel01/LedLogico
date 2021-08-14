@@ -7,6 +7,7 @@
 	import Perdeu from "../src/components/Perdeu.svelte"//importamos o componente Perdeu
 	import Venceu from "../src/components/Venceu.svelte"//importamos o componente Venceu
 	import Personagem from "../src/components/Personagem.svelte"//importamos o componente Personagem
+	import Desistente from "../src/components/Desistente.svelte"//importamos o componente Desistente
 
 	const routes = {
 		"/": Menu,
@@ -14,7 +15,8 @@
 		"/sobre": Sobre,
 		"/perdeu": Perdeu,
 		"/venceu": Venceu,
-		"/heroi": Personagem
+		"/heroi": Personagem,
+		"/desistir": Desistente
 	};
 </script>
 
