@@ -1,5 +1,10 @@
-<script></script>
-
+<script>
+    //y2meta.com - Música épica - Ataque a los titanes (128 kbps).mp3
+</script>
+<audio id="audio" autoplay>
+    <source src="/music/y2meta.com - MÚSICA MOTICACIONAL INSTRUMENTAL - Música Inspiradora Épica (128 kbps).mp3" type="audio/mp3" loop="infinit" />
+    Seu navegador não possui suporte ao elemento audio
+</audio>
 <section class="historia">
     <h2 class="tituloHistoria">ICE EMPIRE</h2>
     <p class="textoHistoria">

@@ -1,7 +1,7 @@
 <script></script>
 
     <audio id="audio" autoplay>
-    <source src="/music/Guren No Yumiya - Epic Orchestral Version_50k.msp3" type="audio/mp3"> Seu navegador não possui suporte ao elemento audio </audio>
+    <source src="/music/Guren No Yumiya - Epic Orchestral Version_50k.mp3" type="audio/mp3"> Seu navegador não possui suporte ao elemento audio </audio>
 <nav class="menu">
     <h1 class="titulo">ice empire</h1>
     <div class="opcoes">

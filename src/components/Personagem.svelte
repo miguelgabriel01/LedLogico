@@ -63,6 +63,10 @@ import { nomeHeroi } from "../store";
     }
 </script>
 
+<audio id="audio" autoplay>
+    <source src="/music/y2meta.com - MÚSICA MOTICACIONAL INSTRUMENTAL - Música Inspiradora Épica (128 kbps).mp3" />
+    Seu navegador não possui suporte ao elemento audio
+</audio>
 <div class="escolherPersonagem">
     <h2 class="tituloHeroi">Escolha seu heroi!!</h2>
     <div class="personagem">
